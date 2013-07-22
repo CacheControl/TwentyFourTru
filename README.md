@@ -1,6 +1,6 @@
 # TwentyFourTru
 
-TODO: Write a gem description
+Ruby wrapper for 24Tru API, no frameworks required.
 
 ## Installation
 
@@ -17,8 +17,16 @@ Or install it yourself as:
     $ gem install TwentyFourTru
 
 ## Usage
+TwentyFourTru::Client.token = 'jkfduisj97823974j2kl24899234'  #set api token
 
-TODO: Write usage instructions here
+@studies = TwentyFourTru::Study.all         #Load all studies you have access to
+@study = TwentyFourTru::Study.find(9999)    #Load single study
+
+@assignments = TwentyFourTru::Assignment.all(study_id)  #Load all assignments for the given study
+@assignment = TwentyFourTru::Assignment.find(assignment_id)  #Load assignment by the given id
+
+@responses = TwentyFourTru::Assignment.all(assignment_id)  #Load all responses for the given assignment
+@response = TwentyFourTru::Assignment.find(response_id)  #Load response by the given id
 
 ## Contributing
 
