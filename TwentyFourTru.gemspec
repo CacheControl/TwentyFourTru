@@ -11,7 +11,9 @@ Gem::Specification.new do |gem|
   gem.description   = %q{24Tru Api}
   gem.summary       = %q{Login to 24tru.com/login and visit your profile to generate your api token}
   gem.homepage      = ""
-  gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'rspec', '~> 2.13.0'
+  gem.add_runtime_dependency 'rest-client', '~> 1.6.7'
+  gem.add_runtime_dependency 'json', '~> 1.8.0'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
