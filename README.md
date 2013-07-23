@@ -25,9 +25,13 @@ TwentyFourTru::Client.token = 'jkfduisj97823974j2kl24899234'  #set api token
 
 @assignments = TwentyFourTru::Assignment.all(study_id)  #Load all assignments for the given study
 @assignment = TwentyFourTru::Assignment.find(assignment_id)  #Load assignment by the given id
+@new_assignment = TwentyFourTru::Assignment.create(STUDY_ID, {name: 'Assignment Name', text: 'Assignment Body'})
 
 @responses = TwentyFourTru::Assignment.all(assignment_id)  #Load all responses for the given assignment
 @response = TwentyFourTru::Assignment.find(response_id)  #Load response by the given id
+@new_text_response = TwentyFourTru::Response.create(ASSIGNMENT_ID, { "owner_id" => PARTICIPANT_ID, "title" => "Betty B. at the store", "text" => "I like to shop"})
+
+
 ```
 ## Contributing
 
