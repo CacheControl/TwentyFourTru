@@ -24,6 +24,11 @@ module TwentyFourTru
         JSON.parse(RestClient.get "#{use_ssl ? api_ssl_url : api_url}" + url, :params => {:auth_token => @token}, :content_type => :json)
       end
 
+      def post(url, options)
+        options.merge!({:auth_token => @token})
+        JSON.parse(RestClient.post "#{use_ssl ? api_ssl_url : api_url}" + url, options, :content_type => :json)
+      end
+
       def clear_connections
         @connections = nil
       end

@@ -9,6 +9,10 @@ module TwentyFourTru
       def find(assignment_id)
         Client.get("/assignments/#{assignment_id}")
       end
+
+      def create(study_id, options)
+        Client.post("/studies/#{study_id}/assignments", options)
+      end
     end
 
     attr_accessor :study_id, :assignment_id
