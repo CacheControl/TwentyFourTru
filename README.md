@@ -17,6 +17,7 @@ Or install it yourself as:
     $ gem install TwentyFourTru
 
 ## Usage
+```ruby
 TwentyFourTru::Client.token = 'jkfduisj97823974j2kl24899234'  #set api token
 
 @studies = TwentyFourTru::Study.all         #Load all studies you have access to
@@ -27,7 +28,7 @@ TwentyFourTru::Client.token = 'jkfduisj97823974j2kl24899234'  #set api token
 
 @responses = TwentyFourTru::Assignment.all(assignment_id)  #Load all responses for the given assignment
 @response = TwentyFourTru::Assignment.find(response_id)  #Load response by the given id
-
+```
 ## Contributing
 
 1. Fork it
