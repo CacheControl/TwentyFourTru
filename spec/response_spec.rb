@@ -11,7 +11,7 @@ describe TwentyFourTru::Response do
   end
 
   it 'should be able to create new text responses' do
-    response = TwentyFourTru::Response.create(ASSIGNMENT_ID, { "owner_id" => PARTICIPANT_ID, "title" => "Betty B. at the store", "text" => "this is awesome", "file" => {} })
+    response = TwentyFourTru::Response.create(ASSIGNMENT_ID, {"owner_id" => PARTICIPANT_ID, "title" => "Betty B. at the store", "text" => "this is awesome"})
     expected_keys = ['id', 'name', 'owner', 'insert_dt', 'url', 'video_url', 'mobile_video_url', 'thumbnail_url']
     expected_keys.each { |key| response.should have_key(key) }
 
