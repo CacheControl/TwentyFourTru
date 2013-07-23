@@ -34,7 +34,7 @@ module TwentyFourTru
       end
 
       def api_host
-        @api_host ||= "web1.24tru.dev"
+        @api_host ||= "www.24tru.com"
       end
 
       def api_ssl_url

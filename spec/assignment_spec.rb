@@ -12,11 +12,7 @@ describe TwentyFourTru::Assignment do
 
   it 'should be able to create new assignments' do
     response = TwentyFourTru::Assignment.create(STUDY_ID, {name: 'Assignment Name', text: 'Assignment Body'})
-    response.should have_key('id')
-    response.should have_key('name')
-    response.should have_key('text')
-    response.should have_key('url')
-    response.should have_key('video_url')
-    response.should have_key('responses_url')
+    expected_keys = ['id', 'name', 'text', 'url', 'video_url', 'responses_url']
+    expected_keys.each { |key| response.should have_key(key) }
   end
 end
