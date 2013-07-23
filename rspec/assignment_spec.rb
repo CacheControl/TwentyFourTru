@@ -1,9 +1,7 @@
 require 'TwentyFourTru'
+require_relative 'spec_helper'
 
 describe TwentyFourTru::Assignment do
-  STUDY_ID = 1718
-  ASSIGNMENT_ID = 13131
-
   it 'should be able load all assignments for a study' do
     TwentyFourTru::Assignment.all(STUDY_ID).should be_a(Array)
   end

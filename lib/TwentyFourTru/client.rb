@@ -7,17 +7,13 @@ module TwentyFourTru
     class << self
       attr_writer :use_ssl, :token, :api_host
 
-      def token
-        'hcZxQq5bEKndMzbgaqow'
-      end
-
       def use_ssl
         @use_ssl || false
       end
 
       # this is your connection for the entire module
       def connection(options={})
-        raise NoToken if token.to_s.empty?
+        raise NoToken if @token.to_s.empty?
 
         @connections ||= {}
 
@@ -25,7 +21,7 @@ module TwentyFourTru
       end
 
       def get(url)
-        JSON.parse (RestClient.get "#{use_ssl ? api_ssl_url : api_url}" + url, :params => {:auth_token => 'Zjy9wcby1y4NzxYsJzMH'})
+        JSON.parse(RestClient.get "#{use_ssl ? api_ssl_url : api_url}" + url, :params => {:auth_token => @token}, :content_type => :json)
       end
 
       def clear_connections
@@ -59,7 +55,7 @@ module TwentyFourTru
         end
 
         def new_connection
-          @connections[@token] = RestClient::Resource.new("#{use_ssl ? api_ssl_url : api_url}", :params => {auth_token: token}, :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
+          @connections[@token] = RestClient::Resource.new("#{use_ssl ? api_ssl_url : api_url}", :params => {auth_token: @token}, :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
         end
 
         def protocol_changed?

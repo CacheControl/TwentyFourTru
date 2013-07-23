@@ -1,7 +1,7 @@
 require 'TwentyFourTru'
+require_relative 'spec_helper'
 
 describe TwentyFourTru::Study do
-  STUDY_ID = 1718
   it 'should be able to load a single study' do
     TwentyFourTru::Study.find(STUDY_ID).should be_a(Object)
   end
